@@ -1,5 +1,11 @@
 main :: IO ()
-main = interact sayHello
+main = interact (showResult . doTheWork . parseInput)
 
-sayHello :: String-> String
-sayHello name = "Hello, " ++name++"!"
+parseInput :: String -> int
+parseInput = read
+
+doesAliceWin :: int -> Bool
+doesAliceWin = undefined
+
+showResult :: Bool -> String
+showResult aliceWon = if aliceWon then "Alice" else "Bob"
