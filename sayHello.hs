@@ -1,11 +1,12 @@
 main :: IO ()
-main = interact (showResult . doTheWork . parseInput)
+main = interact (showResult . doesAliceWin . parseInput)
 
 parseInput :: String -> int
-parseInput = read
-
+parseInput txt = read txt 
+ 
 doesAliceWin :: int -> Bool
-doesAliceWin = undefined
+--doesAliceWin n = if n `mod` 2 == 1 then True else False 
+doesAliceWin n = if n `mod` 2 == 1 
 
 showResult :: Bool -> String
 showResult aliceWon = if aliceWon then "Alice" else "Bob"
